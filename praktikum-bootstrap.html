@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- Menyatakan bahwa ini adalah dokumen HTML5 -->
+<html lang="id">
+  <!-- Bahasa utama dokumen ini adalah Bahasa Indonesia -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Set karakter encoding menjadi UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Membuat tampilan responsif pada perangkat mobile -->
+    <title>Kreativa Digital</title>
+    <!-- Judul halaman yang tampil di tab browser -->
+
+    <!-- Link untuk memuat CSS Bootstrap dari CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Menambahkan efek hover (melayang) pada tombol agar terlihat interaktif */
+      .btn:hover {
+        transform: scale(1.05); /* Membesarkan tombol sedikit saat hover */
+        transition: all 0.2s ease-in-out; /* Animasi transisi selama 0.2 detik */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar: navigasi utama -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Navbar dengan warna gelap -->
+      <div class="container">
+        <!-- Container Bootstrap untuk memberikan padding otomatis -->
+        <a class="navbar-brand" href="#">Kreativa Digital</a>
+        <!-- Nama brand/logo -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <!-- Icon hamburger saat di layar kecil -->
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Kontainer menu navigasi -->
+          <ul class="navbar-nav me-auto">
+            <!-- Daftar menu kiri -->
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <!-- Link Home -->
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <!-- Link ke bagian About -->
+            <li class="nav-item">
+              <a class="nav-link" href="#layanan">Services</a>
+            </li>
+            <!-- Link ke bagian layanan -->
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <!-- Link ke bagian portfolio -->
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+            <!-- Link ke footer/kontak -->
+          </ul>
+
+          <!-- Form pencarian di sebelah kanan navbar -->
+          <form class="d-flex" role="search" onsubmit="handleSearch(event)">
+            <!-- Menangani pencarian saat tombol submit ditekan -->
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Cari layanan..."
+              aria-label="Search"
+              id="searchInput"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Jumbotron: bagian utama sambutan -->
+    <div class="container my-5">
+      <div class="p-5 mb-4 bg-light rounded-3 text-center">
+        <!-- Bagian latar terang dan konten tengah -->
+        <h1 class="display-5 fw-bold">Solusi Digital Kreatif untuk Bisnismu</h1>
+        <!-- Judul besar -->
+        <p class="lead">
+          Kami membantu bisnis UMKM dan startup membangun kehadiran digital...
+        </p>
+        <!-- Deskripsi singkat -->
+        <button
+          class="btn btn-primary btn-lg me-2"
+          onclick="scrollToElement('footer')"
+        >
+          Hubungi Kami
+        </button>
+        <!-- Scroll ke footer -->
+        <button
+          class="btn btn-outline-secondary btn-lg"
+          onclick="scrollToElement('layanan')"
+        >
+          Lihat Layanan
+        </button>
+        <!-- Scroll ke layanan -->
+      </div>
+    </div>
+
+    <!-- Carousel: tampilan gambar yang bisa digeser -->
+    <div id="portfolio" class="container mb-5">
+      <div
+        id="portfolioCarousel"
+        class="carousel slide rounded overflow-hidden"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <!-- Kontainer untuk semua gambar carousel -->
+          <div class="carousel-item active">
+            <img
+              src="james-chan-9PZpzDZqhyM-unsplash.jpg"
+              class="d-block w-100"
+              style="max-height: 310px; object-fit: cover"
+              alt="Slide 1"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="simona-sergi-QiT5YEAt6Is-unsplash.jpg"
+              class="d-block w-100"
+              style="max-height: 310px; object-fit: cover"
+              alt="Slide 2"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="mos-design-IwPKcaH-DaQ-unsplash.jpg"
+              class="d-block w-100"
+              style="max-height: 310px; object-fit: cover"
+              alt="Slide 3"
+            />
+          </div>
+        </div>
+
+        <!-- Tombol navigasi carousel -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#portfolioCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#portfolioCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Section Layanan Kami -->
+    <div class="container text-center mb-5" id="layanan">
+      <h2 class="mb-4">Layanan Kami</h2>
+      <!-- Judul section -->
+      <div class="row">
+        <!-- Row berisi tiga kolom layanan -->
+        <div class="col-md-4 mb-3">
+          <div class="p-4 border rounded">
+            <h4>Desain Web</h4>
+            <p>Kami membuat tampilan web yang estetis dan user-friendly.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="p-4 border rounded">
+            <h4>Pengembangan Web</h4>
+            <p>Web dinamis, cepat, dan sesuai kebutuhan klien.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="p-4 border rounded">
+            <h4>SEO & Digital Marketing</h4>
+            <p>Buat websitemu mudah ditemukan oleh calon pelanggan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer: informasi kontak -->
+    <footer class="bg-dark text-light py-4" id="footer">
+      <div class="container text-center">
+        <p class="mb-1">Kontak: 0821-5504-8196 | Email: info@kreativa.id</p>
+        <p>Alamat: Jl. Anggrek No. 123, Yogyakarta</p>
+        <small>&copy; 2025 Kreativa Digital</small>
+        <!-- Hak cipta -->
+      </div>
+    </footer>
+
+    <!-- Script Bootstrap dan JavaScript interaktif -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript: fungsi scroll dan pencarian -->
+    <script>
+      function scrollToElement(id) {
+        const element = document.getElementById(id); // Cari elemen berdasarkan id
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" }); // Scroll halus ke elemen
+        }
+      }
+
+      function handleSearch(event) {
+        event.preventDefault(); // Cegah form melakukan reload halaman
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase(); // Ambil nilai input dan ubah ke huruf kecil
+
+        if (input.includes("layanan") || input.includes("services")) {
+          scrollToElement("layanan"); // Scroll ke bagian layanan
+        } else if (input.includes("kontak") || input.includes("contact")) {
+          scrollToElement("footer"); // Scroll ke footer
+        } else {
+          alert("Hasil tidak ditemukan. Coba kata kunci lain."); // Jika tidak cocok, tampilkan alert
+        }
+      }
+    </script>
+  </body>
+</html>
